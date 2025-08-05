@@ -12,7 +12,15 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
+
 file(GLOB SRC_FILES src/*.cpp)
-add_executable(main ${SRC_FILES})
-target_compile_features(main PRIVATE cxx_std_17)
-target_link_libraries(main PRIVATE SFML::Graphics)
+add_executable(${PROJECT_NAME} ${SRC_FILES})
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
+target_link_libraries(${PROJECT_NAME} PRIVATE SFML::Graphics)
+
+# Copy res dir to the binary directory
+add_custom_command(
+    TARGET ${PROJECT_NAME}
+    COMMENT "Copy Res directory"
+    PRE_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/res $<TARGET_FILE_DIR:${PROJECT_NAME}>/res
+    VERBATIM)
