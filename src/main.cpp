@@ -75,7 +75,7 @@ void updateGeometry(uint32_t idx, Star const& s, sf::VertexArray& va)
 
 int main()
 {
-    auto window = sf::RenderWindow(sf::VideoMode({conf::WINDOW_SIZE.x, conf::WINDOW_SIZE.y}), "CMake SFML Project", conf::window_state);
+    auto window = sf::RenderWindow(sf::VideoMode({conf::WINDOW_SIZE.x, conf::WINDOW_SIZE.y}), "AllTheStars", conf::window_state);
     window.setFramerateLimit(conf::MAX_FRAMERATE);
     // window.setMouseCursorVisible(false);
 
