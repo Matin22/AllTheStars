@@ -66,4 +66,4 @@ You can adjust simulation parameters in `src/config.hpp`:
 
 ## License
 
-This project is licensed under Public Domain. See `LICENSE.md` for details.
+This project is licensed under the [MIT License](LICENSE.md). See the `LICENSE.md` file for details.
